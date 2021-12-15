@@ -66,10 +66,10 @@ function createProject (name, useNpm) {
 
 // Runs the init script in @phaser-cli/scripts
 function run (root, appName, useYarn) {
-  const dependencies = ['phaser', '@phaser-cli/scripts']
+  const dependencies = ['phaser', 'ajustor-phaser-cli-scripts']
 
   console.log('Installing packages. This might take a couple of minutes.')
-  console.log(`Installing ${chalk.cyan('phaser')} and ${chalk.cyan('@phaser-cli/scripts')}`)
+  console.log(`Installing ${chalk.cyan('phaser')} and ${chalk.cyan('ajustor-phaser-cli-scripts')}`)
 
   env.isYarnOnline(useYarn)
     .then(isOnline => {
@@ -77,7 +77,7 @@ function run (root, appName, useYarn) {
         .then(() => {
           const scriptsPath = path.resolve(
             process.cwd(),
-            'node_modules/@phaser-cli/scripts/scripts/init.js'
+            'node_modules/ajustor-phaser-cli-scripts/scripts/init.js'
           )
 
           const init = require(scriptsPath)
